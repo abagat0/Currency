@@ -49,19 +49,20 @@ class Exchange extends React.Component {
             );
         });
         return (
-            <div><form onSubmit={this.handleSubmit}>
-                <label>
-                    Value:
-                    <TextField type="text" id="value"  value={this.state.value}  onChange={this.handleChange} />
-                </label>
-                <label>
-                    Pick currency code:
-                    <select id='currency' value={this.state.currency}   onChange={this.handleChange}>
-                        {array}
-                    </select>
-                </label>
-                <Button type="submit"  variant="contained" color="primary">Exchange</Button>
-            </form>
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Value:
+                        <TextField type="text" id="value"  value={this.state.value}  onChange={this.handleChange} />
+                    </label>
+                    <label>
+                        Pick currency code:
+                        <select id='currency' value={this.state.currency}   onChange={this.handleChange}>
+                            {array}
+                        </select>
+                    </label>
+                    <Button type="submit"  variant="contained" color="primary">Exchange</Button>
+                </form>
                 <div >Calcuated value: {this.state.calculatedUSD}</div><br/>
                 <div>User Calulations:</div>
                 <UserExchangeList currency={this.state.currency} items={this.state.calculationsList}/>
