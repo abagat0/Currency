@@ -36,7 +36,6 @@ class Exchange extends React.Component {
         localStorage.setItem('calculation', JSON.stringify(arrayCalc));
 
         this.setState({calculationsList: arrayCalc, currency:this.props.currency?this.props.currency:'Select'});
-        console.log(this.state.calculationsList)
 
     }
     render() {

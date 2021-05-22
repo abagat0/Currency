@@ -16,14 +16,7 @@ class Rates extends React.Component {
       this.setState({calculations: this.props.items})
 
     }
-    componentDidUpdate(prevProps) {
-console.log(prevProps)
-        console.log(this.state.calculations)
-       /// this.setState({calculations: this.props.items})
-        if (prevProps.text !== this.props.text) {
-          //this.updateAndNotify();
-        }
-    }
+
     handleDelete = (e,timestamp)=>{
         let keys = this.props.items;
         keys.map((item, index) => {
