@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 class Exchange extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {rates: [], value:'', currency:this.props.currency?this.props.currency:'Select', calculatedUSD: '0 USD', calculationsList:[]};
+        this.state = {rates: [], value: '', currency: this.props.currency ? this.props.currency: 'Select', calculatedUSD: '0 USD', calculationsList: []};
     }
 
     componentDidMount() {
@@ -23,21 +23,20 @@ class Exchange extends React.Component {
 
     handleChange = (event) => {
         this.setState({[event.target.id]: event.target.value});
-
     }
+
     handleSubmit = (event) => {
         event.preventDefault();
         const rate = this.state.rates[this.state.currency];
         const calculation = (this.state.value / rate).toFixed(8) + ' USD';
         this.setState({calculatedUSD: calculation});
         let arrayCalc = JSON.parse(localStorage.getItem('calculation'));
-        let calc = {timestamp:new Date().getTime(),calculation: calculation, currency:this.state.currency, rate:rate, value: this.state.value}
+        let calc = {timestamp:new Date().getTime(),calculation: calculation, currency: this.state.currency, rate: rate, value: this.state.value}
         arrayCalc.push(calc)
         localStorage.setItem('calculation', JSON.stringify(arrayCalc));
-
-        this.setState({calculationsList: arrayCalc, currency:this.props.currency?this.props.currency:'Select'});
-
+        this.setState({calculationsList: arrayCalc, currency: this.props.currency ? this.props.currency : 'Select'});
     }
+
     render() {
         let array = [];
         const selectKeys = Object.keys(this.state.rates)

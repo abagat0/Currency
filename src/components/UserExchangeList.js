@@ -42,22 +42,23 @@ class Rates extends React.Component {
         }
         return (
             <div>
-        <TableContainer component={Paper}>
-            <Table  aria-label="simple table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Time</TableCell>
-                        <TableCell> Currency</TableCell>
-                        <TableCell align="right">Rate</TableCell>
-                        <TableCell align="right">Value</TableCell>
-                        <TableCell align="right">Calculation</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {array}
-                </TableBody>
-            </Table>
-        </TableContainer></div>
+                <TableContainer component={Paper}>
+                    <Table  aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell>Time</TableCell>
+                                <TableCell> Currency</TableCell>
+                                <TableCell align="right">Rate</TableCell>
+                                <TableCell align="right">Value</TableCell>
+                                <TableCell align="right">Calculation</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {array}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </div>
         );
     }
 }
