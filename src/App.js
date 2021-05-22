@@ -11,7 +11,6 @@ function App() {
           <ul>
             <li><Link to="/rates">Rates</Link></li>
             <li><Link to="/exchange">Exchange</Link></li>
-            <li><Link to="/exchange/EUR">Exchange Rate EUR</Link></li>
           </ul>
         </nav>
         <Switch>
