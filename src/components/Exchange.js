@@ -26,7 +26,16 @@ class Exchange extends React.Component {
     }
 
     handleSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault()
+
+        if(this.state.currency=='Select'){
+            alert('Choose currency in form')
+            return false;
+        }
+        if(!this.state.value){
+            alert('Fill value in form')
+            return false;
+        }
         const rate = this.state.rates[this.state.currency];
         const calculation = (this.state.value / rate).toFixed(8) + ' USD';
         this.setState({calculatedUSD: calculation});
@@ -34,7 +43,7 @@ class Exchange extends React.Component {
         let calc = {timestamp:new Date().getTime(),calculation: calculation, currency: this.state.currency, rate: rate, value: this.state.value}
         arrayCalc.push(calc)
         localStorage.setItem('calculation', JSON.stringify(arrayCalc));
-        this.setState({calculationsList: arrayCalc, currency: this.props.currency ? this.props.currency : 'Select'});
+        this.setState({calculationsList: arrayCalc});
     }
 
     render() {
@@ -65,7 +74,7 @@ class Exchange extends React.Component {
                 </form>
                 <div >Calcuated value: {this.state.calculatedUSD}</div><br/>
                 <div>User Calulations:</div>
-                <UserExchangeList currency={this.state.currency} items={this.state.calculationsList}/>
+                <UserExchangeList currency={this.props.currency ? this.props.currency: 'Select'} items={this.state.calculationsList}/>
             </div>
         );
     }

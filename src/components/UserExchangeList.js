@@ -14,7 +14,6 @@ class Rates extends React.Component {
     }
     componentDidMount() {
       this.setState({calculations: this.props.items})
-
     }
 
     handleDelete = (e,timestamp)=>{
@@ -30,7 +29,7 @@ class Rates extends React.Component {
     render() {
         let array = [];
         const keys =this.props.items;
-        const reversed = keys.reverse();
+        const reversed = keys ? keys.reverse() : [];
         if(reversed) {
             reversed.map((item, index) => {
                 if(this.props.currency && item.currency == this.props.currency || this.props.currency=='Select') {
