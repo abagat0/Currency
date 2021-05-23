@@ -7,7 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-class Rates extends React.Component {
+class UserExchangeList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {calculations: this.props.items};
@@ -61,4 +61,4 @@ class Rates extends React.Component {
         );
     }
 }
-export default Rates
+export default UserExchangeList
