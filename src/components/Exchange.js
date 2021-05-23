@@ -60,11 +60,11 @@ class Exchange extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>
+                    <label htmlFor="value">
                         Value:
                         <TextField type="text" id="value"  value={this.state.value}  onChange={this.handleChange} />
                     </label>
-                    <label>
+                    <label htmlFor="currency">
                         Pick currency code:
                         <select id='currency' value={this.state.currency}   onChange={this.handleChange}>
                             {array}
